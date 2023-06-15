@@ -4,13 +4,16 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.basicMarquee
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
@@ -86,11 +89,22 @@ fun Filters() {
     }
 }
 
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
+fun CreateMarquee() {
+    Column(modifier = Modifier.width(30.dp)) {
+        Text(
+            text = "Rujira",
+            Modifier.basicMarquee()
+        )
+    }
+}
+
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     JC_LearnComposeAdditionalTheme {
-        Filters()
+        CreateMarquee()
     }
 }

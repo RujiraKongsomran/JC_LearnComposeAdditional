@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -32,7 +33,8 @@ class MainActivity : ComponentActivity() {
 fun CreateHorizontalPager() {
 
     HorizontalPager(
-        pageCount = 10
+        pageCount = 10,
+        contentPadding = PaddingValues(start = 64.dp),
     ) { page ->
         Card(
             modifier = Modifier
